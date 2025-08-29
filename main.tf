@@ -79,7 +79,7 @@ resource "azurerm_app_service" "primary" {
 
   app_settings = {
     "APPINSIGHTS_INSTRUMENTATIONKEY" = azurerm_application_insights.primary.instrumentation_key
-    # Set Application Insights key for telemetry
+    # Generates a key from the resource named primary, and sends that unique key to gather data AKA telemtry
   }
 
   depends_on = [azurerm_application_insights.primary]           # Ensure App Insights created first
